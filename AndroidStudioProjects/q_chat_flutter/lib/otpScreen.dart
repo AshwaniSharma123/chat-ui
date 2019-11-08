@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:q_chat_flutter/chatUiMessage.dart';
 
 class OtpScreen extends StatefulWidget {
   @override
@@ -68,6 +69,7 @@ void dispose() {
              child: TextFormField(
                 autofocus: true,
                 maxLength: 1,
+                textAlign: TextAlign.center,
             keyboardAppearance: Brightness.light,
             keyboardType: TextInputType.number,
             textInputAction: TextInputAction.next, 
@@ -96,6 +98,7 @@ void dispose() {
            Container(
            width: MediaQuery.of(context).size.width*0.11,
                child: TextFormField(
+                 textAlign: TextAlign.center,
                 focusNode: focus,
                autofocus: true,
                maxLength: 1,
@@ -127,6 +130,7 @@ void dispose() {
            Container(
             width: MediaQuery.of(context).size.width*0.11,
              child: TextFormField(
+               textAlign: TextAlign.center,
                focusNode: focus1,
                autofocus: true,
                maxLength: 1,
@@ -156,6 +160,7 @@ void dispose() {
            Container(
             width: MediaQuery.of(context).size.width*0.11,
              child: TextFormField(
+               textAlign: TextAlign.center,
            focusNode: focus2,
             maxLength: 1,
             
@@ -184,13 +189,19 @@ void dispose() {
                ),
       Container(
         margin: EdgeInsets.fromLTRB(50, 0, 0, 0),
-        child: Text("Resend Code in $_start Seconds.",
+        child: _start < 10 ?  Text("Resend Code in 0.0$_start",
            style: TextStyle(
           fontSize: 16,
            color: Colors.grey,
            fontWeight: FontWeight.w600,
             ),
-           ),
+           ) : Text("Resend Code in 0.$_start",
+            style: TextStyle(
+          fontSize: 16,
+           color: Colors.grey,
+           fontWeight: FontWeight.w600,
+            ),
+           ) ,
       ),
             SizedBox(
               height: MediaQuery.of(context).size.height*0.05,
@@ -198,7 +209,10 @@ void dispose() {
              InkWell(
                 onTap: ()
                 {
-                  
+                     Navigator.push(
+                       context,
+                     MaterialPageRoute(builder: (context) => ChatDetailScreen   ()),
+                                   );
                 },
                 child: Container(
                   margin: EdgeInsets.fromLTRB(50, 0, 0, 0),

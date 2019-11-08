@@ -10,7 +10,7 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
 
-  // List<String> litems = ["1","2","Third","4"];
+  //List<String> litems = ["1","2","Third","4"];
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ListTile(
             leading: CircleAvatar( 
                   child:  ClipOval(
-                   child:      SizedBox(
+                   child: SizedBox(
                      width: 180.0,
                      height: 180.0,
                      child: Image.asset('Asset/images1.jpg'),
